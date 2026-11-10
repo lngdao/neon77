@@ -3,6 +3,6 @@
   "owner": { "name": "Long Dao" },
   "metadata": { "description": "Long's cyberpunk companion mod for Claude Code." },
   "plugins": [
-    { "name": "neon77", "source": "./neon77", "description": "Animated ASCII cat above the prompt, 2077-flavoured spinner and turn-end lines." }
+    { "name": "neon77", "source": "./mods/neon77", "description": "Animated ASCII cat above the prompt, 2077-flavoured spinner and turn-end lines." }
   ]
 }
