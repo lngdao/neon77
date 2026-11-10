@@ -1,0 +1,7 @@
+{
+  "name": "neon77",
+  "version": "0.1.0",
+  "description": "Cyberpunk companion: an animated ASCII cat above the prompt that reacts to the session, plus 2077-flavoured spinner and turn-end lines.",
+  "author": { "name": "Long Dao" },
+  "keywords": ["mods", "cyberpunk", "pet", "ui"]
+}
