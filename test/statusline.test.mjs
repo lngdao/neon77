@@ -94,6 +94,10 @@ test('the script reads stdin and prints two lines', () => {
   assert.equal(lines.length, 2)
   assert.match(lines[0], /^▓ m ▓ CTX /)
 
+  // a byte-order mark in front of the JSON (Windows PowerShell pipes) is tolerated
+  const bom = spawnSync(process.execPath, [path.join(repo, 'statusline.mjs')], { input: '﻿' + JSON.stringify({ model: { id: 'bom' } }), encoding: 'utf8' })
+  assert.match(plain(bom.stdout), /^▓ bom ▓/)
+
   const empty = spawnSync(process.execPath, [path.join(repo, 'statusline.mjs')], { input: '', encoding: 'utf8' })
   assert.equal(empty.status, 0)
   assert.match(plain(empty.stdout), /^▓ \? ▓/)

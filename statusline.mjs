@@ -140,7 +140,8 @@ function isMain() {
 if (isMain()) {
   let data = {}
   try {
-    data = JSON.parse(fs.readFileSync(0, 'utf8'))
+    // some shells (Windows PowerShell) put a byte-order mark in front of piped text
+    data = JSON.parse(fs.readFileSync(0, 'utf8').replace(/^﻿/, ''))
   } catch {
     // no stdin, or not JSON: draw the line with placeholders rather than nothing
   }
